@@ -22,39 +22,116 @@ void setup()
 
 void loop()
 {
+  Serial.print("------PANTHERA------\n");
   digitalWrite(GND_OUTPin, LOW);
-  digitalWrite(DPLUS_OUTPin, LOW);
-  digitalWrite(DMINUS_OUTPin, LOW);
-  digitalWrite(VCC_OUTPin, LOW);
+  delay(1000);
   int val = digitalRead(GND_INPin);
+  delay(500);
   if (val == LOW){
-    Serial.print("GND is OK!\n");
+    Serial.print("(PANTHERA) GND is OK!\n");
   }
   else{
-    Serial.print("GND is NOT OK!\n");
+    Serial.print("(PANTHERA) GND is NOT OK!\n");
   }
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DPLUS_OUTPin, LOW);
+  delay(1000);
   val = digitalRead(DPLUS_INPin);
+  delay(500);
   if (val == LOW){
-    Serial.print("D+ is OK!\n");
+    Serial.print("(PANTHERA) D+ is OK!\n");
   }
   else{
-    Serial.print("D+ is NOT OK!\n");
+    Serial.print("(PANTHERA) D+ is NOT OK!\n");
   }
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DPLUS_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DMINUS_OUTPin, LOW);
+  delay(1000);
   val = digitalRead(DMINUS_INPin);
+  delay(500);
   if (val == LOW){
-    Serial.print("D- is OK!\n");
+    Serial.print("(PANTHERA) D- is OK!\n");
   }
   else{
-    Serial.print("D- is NOT OK!\n");
+    Serial.print("(PANTHERA) D- is NOT OK!\n");
   }
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DPLUS_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DMINUS_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(VCC_OUTPin, LOW);
+  delay(1000);
   val = digitalRead(VCC_INPin);
+  delay(500);
   if (val == LOW){
-    Serial.print("VCC is OK!\n");
+    Serial.print("(PANTHERA) VCC is OK!\n");
   }
   else{
-    Serial.print("VCC is NOT OK!\n");
+    Serial.print("(PANTHERA) VCC is NOT OK!\n");
+  }
+  delay(500);
+  Serial.print("------END OF PANTHERA------\n");
+  Serial.print("------MADCATZ TE2------\n");
+  digitalWrite(GND_OUTPin, LOW);
+  delay(1000);
+  val = digitalRead(GND_INPin);
+  delay(500);
+  if (val == LOW){
+    Serial.print("(TE2) GND is OK!\n");
+  }
+  else{
+    Serial.print("(TE2) GND is NOT OK!\n");
+  }
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(VCC_OUTPin, LOW);
+  delay(1000);
+  val = digitalRead(DPLUS_INPin);
+  delay(500);
+  if (val == LOW){
+    Serial.print("(TE2) D+ is OK!\n");
+  }
+  else{
+    Serial.print("(TE2) D+ is NOT OK!\n");
+  }
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(VCC_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DMINUS_OUTPin, LOW);
+  delay(1000);
+  val = digitalRead(DMINUS_INPin);
+  delay(500);
+  if (val == LOW){
+    Serial.print("(TE2) D- is OK!\n");
+  }
+  else{
+    Serial.print("(TE2) D- is NOT OK!\n");
   }
   
-  delay(3000);
+  digitalWrite(GND_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(VCC_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DMINUS_OUTPin, HIGH);
+  delay(1000);
+  digitalWrite(DPLUS_OUTPin, LOW);
+  delay(1000);
+  val = digitalRead(VCC_INPin);
+  delay(500);
+  if (val == LOW){
+    Serial.print("(TE2) VCC is OK!\n");
+  }
+  else{
+    Serial.print("(TE2) VCC is NOT OK!\n");
+  }
+  delay(500);
+  Serial.print("------END OF TE2------\n");
   
 }
